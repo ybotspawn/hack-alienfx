@@ -1,10 +1,6 @@
+#include "functions.h"
 
-#include <libusb.h>
-
-#include <stdio.h>
-
-int
-main() {
+int main() {
 	libusb_device_handle *dev;
 	int ret;
 
@@ -17,7 +13,7 @@ main() {
 	// DEBUG
 	libusb_set_debug(NULL, LIBUSB_LOG_LEVEL_DEBUG);
 
-	dev = libusb_open_device_with_vid_pid(NULL, 0x187c, 0x0525);
+	dev = libusb_open_device_with_vid_pid(NULL, 0x187c, 0x0527);
 	if(dev == NULL) {
 		fprintf(stderr, "failed to open usb device\n");
 		return 1;

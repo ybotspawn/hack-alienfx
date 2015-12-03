@@ -1,38 +1,4 @@
-
-#include <libusb.h>
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-void
-eprint(const char* msg, int err) {
-	switch(err) {
-	case LIBUSB_ERROR_IO:
-		fprintf(stderr, "%s: I/O\n", msg);
-		break;
-	case LIBUSB_ERROR_NOT_FOUND:
-		fprintf(stderr, "%s: not found\n", msg);
-		break;
-	case LIBUSB_ERROR_BUSY:
-		fprintf(stderr, "%s: busy\n", msg);
-		break;
-	case LIBUSB_ERROR_NO_DEVICE:
-		fprintf(stderr, "%s: no device\n", msg);
-		break;
-	case LIBUSB_ERROR_NOT_SUPPORTED:
-		fprintf(stderr, "%s: not supported\n", msg);
-		break;
-	case LIBUSB_ERROR_PIPE:
-		fprintf(stderr, "%s: pipe\n", msg);
-		break;
-	case LIBUSB_ERROR_TIMEOUT:
-		fprintf(stderr, "%s: timeout\n", msg);
-		break;
-	default:
-		fprintf(stderr, "%s: errno=%d\n", msg, err);
-	}
-}
+#include "functions.h"
 
 int
 main()
@@ -53,7 +19,7 @@ main()
 	// DEBUG
 	libusb_set_debug(NULL, LIBUSB_LOG_LEVEL_ERROR);
 
-	dev = libusb_open_device_with_vid_pid(NULL, 0x187c, 0x0525);
+	dev = libusb_open_device_with_vid_pid(NULL, 0x187c, 0x0527);
 	if(dev == NULL) {
 		fprintf(stderr, "failed to open usb device\n");
 		goto bye_library;

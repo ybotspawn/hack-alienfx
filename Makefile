@@ -1,10 +1,10 @@
 
 libs := libusb-1.0
-bin := req retr reset runseq
+bin := req retr reset runseq run
 
 CC ?= cc
 CFLAGS := -Wall -ggdb $(shell pkg-config --cflags $(libs))
-LDFLAGS := $(shell pkg-config --libs $(libs)) -lreadline
+LDFLAGS := $(shell pkg-config --libs $(libs)) -lreadline -O0
 
 all: ${bin}
 
@@ -13,4 +13,3 @@ all: ${bin}
 
 clean:
 	rm -vf ${bin}
-
