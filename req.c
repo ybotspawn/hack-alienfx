@@ -1,7 +1,6 @@
 #include "functions.h"
 
-unsigned char
-c16tob(char c)
+unsigned char c16toby(char c)
 {
 	if('0' <= c && c <= '9')
 		return c - '0';
@@ -35,8 +34,8 @@ main(int argc, char *argv[])
 	}
 
 	for(i = 0, j = 0; i < len; i +=2, j ++) {
-		b = c16tob(str[i+1]);
-		b += c16tob(str[i]) * 16;
+		b = c16toby(str[i+1]);
+		b += c16toby(str[i]) * 16;
 		bytes[j] = b;
 	}
 

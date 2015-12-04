@@ -1,8 +1,6 @@
 #include "functions.h"
 
-int
-main()
-{
+int main() {
 	unsigned char buf[9];
 	char *line;
 	int ret;
