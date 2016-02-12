@@ -9,7 +9,7 @@ LDFLAGS := $(shell pkg-config --libs $(libs)) -lreadline -O0
 all: ${bin}
 
 %: %.c
-	${CC} ${CFLAGS} ${LDFLAGS} $< -o $@
+	 ${CC} $< ${CFLAGS} ${LDFLAGS} -o $@
 
 clean:
 	rm -vf ${bin}
