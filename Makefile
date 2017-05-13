@@ -1,6 +1,6 @@
 
 libs := libusb-1.0
-bin := req retr reset runseq run
+bin := req retr reset runseq run testfile
 
 CC ?= cc
 CFLAGS := -Wall -ggdb $(shell pkg-config --cflags $(libs))
